@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.appops.shared.core;
+package org.appops.shared.client.core;
 
 /**
  * @author Debasish Padhy Created it on 15-Aug-2012
@@ -17,33 +17,22 @@ import java.io.Serializable;
  * 
  */
 @SuppressWarnings("serial")
-public interface Entity {
-
-	@SuppressWarnings("unchecked")
+public interface Entity extends Serializable {
 
 	public <T extends Serializable> T getPropertyValue(final String name);
 
-	public <T extends Serializable> Property<T> getProperty(final String name);
-
-	/**
-	 * If property doesn't exist by the name it adds it or overwrites
-	 * @param name
-	 * @param p
-	 */
-	public <T extends Serializable> void setProperty( final Property<T> p);
-
 	/**
 	 * expects a value and creates a property instance wrapper internally
+	 * 
 	 * @param name
 	 * @param t
 	 */
-	public <T extends Serializable> void setPropertyValue(final String name , T t);
-
+	public <T extends Serializable> void setPropertyValue(final String name, T t);
 
 	/**
 	 * @return the partial - defaults to true
 	 * 
-	 * Indicates if the entity is a partial representation of the actual persistent entity
+	 *         Indicates if the entity is a partial representation of the actual persistent entity
 	 * 
 	 */
 	public boolean isPartial();
@@ -54,12 +43,12 @@ public interface Entity {
 	 */
 	public void setPartial(final boolean partial);
 
+	public EntityType getType();
 
-	public Type getType() ;
-	public void setType(Type t);
+	public void setType(EntityType t);
 
-	public boolean isDirty() ;
+	public boolean isDirty();
 
-	public void setDirty(boolean dirty) ;
+	public void setDirty(boolean dirty);
 
 }

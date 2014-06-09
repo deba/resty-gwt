@@ -1,10 +1,9 @@
 /**
  * 
  */
-package org.appops.shared.core;
+package org.appops.shared.client.core;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
 
 
 /**

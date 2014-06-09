@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+
+	<!-- We need the JUnit module in the main module, -->
+	<!-- otherwise eclipse complains (Google plugin bug?) -->
+	<inherits name='com.google.gwt.junit.JUnit' />
+
+	<!-- Inherit the default GWT style sheet. You can change -->
+	<!-- the theme of your GWT application by uncommenting -->
+	<!-- any one of the following lines. -->
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+	<!-- <inherits name="in.appops.platform.EntityConfigurationShared" />
+	<inherits name='in.appops.platform.bindings.web.gwt.dispatch.Dispatch'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+	<!-- Other module inherits -->
+	<!-- <inherits name="in.appops.platform.core.Core" /> -->
+	<!-- Specify the app entry point class. -->
+	<entry-point class='org.appops.shared.client.AppopsGenerator' />
+
+	<!-- Specify the paths for translatable code -->
+
+	<generate-with class="org.appops.shared.rebind.pojogenerator.PojoGenerator">
+		<when-type-is class="org.appops.shared.client.Dummy" />
+	</generate-with>
+
+	<!-- <generate-with
+		class="in.appops.rebind.ServiceInterfaceProxyGenerator">
+		<when-type-assignable class="com.google.gwt.user.client.rpc.RemoteService" />
+	</generate-with> -->
+
+	<source path='client' />
+	<source path='rebind' />
+	<source path='core' />
+</module>

@@ -93,6 +93,16 @@
       <version>${resteasy.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+		<groupId>appops_platform</groupId>
+		<artifactId>core</artifactId>
+		<version>08.04.2014</version>
+	</dependency>
+	<dependency>
+		<groupId>appops_platform</groupId>
+		<artifactId>appops_shared</artifactId>
+		<version>08.04.2014</version>
+	</dependency>
   </dependencies>
 
   <build>
@@ -125,6 +135,11 @@
         <artifactId>gwt-maven-plugin</artifactId>
 
         <configuration>
+        	<runTarget>AppopsGenerator.html</runTarget>
+			<hostedWebapp>${webappDirectory}</hostedWebapp>
+			<modules>
+				<module>org.appops.shared.AppopsGenerator</module>
+			</modules>
           <gen>${project.build.directory}/.generated</gen>
           <logLevel>INFO</logLevel>
           <noServer>false</noServer>

@@ -1,4 +1,4 @@
-package org.appops.shared.core;
+package org.appops.shared.client.core;
 
 
 /**
