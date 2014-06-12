@@ -43,7 +43,7 @@ public class Operation implements Serializable {
 	 * 
 	 */
 
-	Operation() {
+	public Operation() {
 
 	}
 
@@ -76,7 +76,7 @@ public class Operation implements Serializable {
 
 	}
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	@Override
 	public Operation clone() {
 		final Operation clone = new Operation(this.getName(), this.parent);
@@ -93,7 +93,7 @@ public class Operation implements Serializable {
 			;
 		}
 		return clone;
-	}
+	}*/
 
 	public String getFullyQualifiedName() {
 		return getInterfaceName() + "." + getName();
